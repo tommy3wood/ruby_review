@@ -7,6 +7,7 @@
 # puts "An economic and green option is the classic #{ car_3[:model]}. A used #{ car_3[:year]} model will probably set you back #{ car_3[:price]}."
 
 class Car
+  attr_reader :make, :model, :year, :price
 
   def initialize(make, model, color, price, year, stock)
     @make = make
@@ -15,22 +16,6 @@ class Car
     @price = price 
     @year = year
     @stock = stock
-  end
-
-  def make
-    @make
-  end
-
-  def model
-    @model
-  end
-
-  def year
-    @year
-  end
-
-  def price
-    @price
   end
 
   def price=(new_price)
