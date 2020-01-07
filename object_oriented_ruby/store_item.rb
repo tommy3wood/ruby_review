@@ -8,6 +8,7 @@
 
 class Car
   attr_reader :make, :model, :year, :price
+  attr_writer :price
 
   def initialize(make, model, color, price, year, stock)
     @make = make
@@ -36,3 +37,9 @@ car_3 = Car.new("Toyota", "prius", "grey", 25000, 2015, true)
 car_1.print_info
 p car_2.model
 p car_3.price
+p car_3
+puts "=" * 40
+p "PRIUS SALE"
+puts "=" * 40
+car_3.price = 15000
+p car_3
