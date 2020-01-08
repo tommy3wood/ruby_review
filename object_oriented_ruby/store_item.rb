@@ -1,15 +1,38 @@
-class Car
+class Product
+  def initialize(input_options)
+    @price = input_options[:price]
+    @year = input_options[:year]
+    @stock = input_options[:stock]
+  end
+end
+
+class Food < Product
+  def initialize(input_options)
+    super
+    @protien = input_options[:protien]
+    @vegetable = input_options[:vegetable]
+    @starch = input_options[:starch]
+  end
+
+  def shelf_life
+    if @year < 2020
+      puts "SOMETHING STINKS"
+    else
+      puts "SO FRESH"
+    end
+  end
+
+end
+
+class Car < Product
   attr_reader :make, :model, :year, :price
   attr_writer :price
 
   def initialize(input_options)
-    @make = input_options[:first_name]
+    super
+    @make = input_options[:make]
     @model = input_options[:model]
     @color = input_options[:color]
-    @price = input_options[:price]
-    @year = input_options[:year]
-    @stock = input_options[:stock]
-    
   end
 
   def opposite_day_sale
@@ -37,7 +60,7 @@ car_1 = Car.new(
                 stock: true
                 )
 car_2 = Car.new(
-                first_name: "Tesla", 
+                make: "Tesla", 
                 model: "space truck thing", 
                 color: "blue", 
                 price: 67000, 
@@ -52,6 +75,15 @@ car_3 = Car.new(
                 year: 2015, 
                 stock: true
                 )
+food_1 = Food.new(
+                protien: "Round chuck", 
+                vegetable: "Green beans", 
+                starch: "Idaho Golds", 
+                price: 13.50, 
+                year: 2019, 
+                stock: true
+                )
+
 
 car_1.print_info
 p car_2.model
@@ -65,3 +97,8 @@ p "PRIUS FLASH SALE"
 puts "=" * 30
 car_3.price = 15000
 p car_3
+puts "=" * 30
+puts "Grocery ORDER"
+puts "=" * 30
+p food_1
+food_1.shelf_life
