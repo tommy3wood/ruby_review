@@ -12,11 +12,17 @@ module Movable
   end
 end
 
-class Car
-  include Movable
+class Vehicle
   def initialize(input_options)
     @speed = 0
     @direction = 'north'
+  end
+end
+ 
+class Car < Vehicle
+  include Movable
+  def initialize(input_options)
+    super()
     @fuel = input_options[:fuel]
     @make = input_options[:make]
     @model = input_options[:model]
@@ -27,11 +33,10 @@ class Car
   end
 end
 
-class Bike
+class Bike < Vehicle
   include Movable
   def initialize(input_options)
-    @speed = 0
-    @direction = 'north'
+    super
     @gears = input_options[:gears]
     @weight = input_options[:weight]
   end
