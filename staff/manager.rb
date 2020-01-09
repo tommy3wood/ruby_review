@@ -1,3 +1,6 @@
+require_relative "./employee.rb"
+require_relative "./reportable.rb"
+
 class Manager < Employee
   include Reportable
   attr_reader :employees

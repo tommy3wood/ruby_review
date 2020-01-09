@@ -1,3 +1,7 @@
+require_relative "./employee.rb"
+require_relative "./manager.rb"
+require_relative "./intern.rb"
+
 employee_1 = Employee.new(
                           first_name: "Han", 
                           last_name: "Solo", 
@@ -29,4 +33,5 @@ intern = Intern.new(
 
 intern.send_report
 manager.send_report
-employee_1.send_report
+p employee_1
+p manager.
