@@ -17,12 +17,6 @@ class Employee
     @salary = @salary * 1.05
   end
 
-  def give_all_raises
-    employees.each do |employee|
-      employee.give_annual_raise
-    end
-  end
-
 end
 
 class Manager < Employee
@@ -40,7 +34,6 @@ class Manager < Employee
   end
 
   def give_all_raises
-    super
     employees.each do |employee|
       employee.give_annual_raise * 2
     end
