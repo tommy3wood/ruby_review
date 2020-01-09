@@ -1,6 +1,8 @@
 require_relative "./product.rb"
+require_relative "./marketprice.rb"
 
 class Food < Product
+  include MarketPrice
   def initialize(input_options)
     super
     @protien = input_options[:protien]

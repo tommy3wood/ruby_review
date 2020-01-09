@@ -1,3 +1,9 @@
+module MarketPrice
+   def price=(new_price)
+    @price = new_price
+  end
+end
+
 class Product
   def initialize(input_options)
     @price = input_options[:price]

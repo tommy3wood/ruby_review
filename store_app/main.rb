@@ -1,6 +1,7 @@
 require_relative "./product.rb"
 require_relative "./food.rb"
 require_relative "./car.rb"
+require_relative "./marketprice.rb"
 
 car_1 = Car.new(
                 make: "buick", 

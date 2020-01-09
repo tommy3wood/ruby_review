@@ -1,6 +1,8 @@
 require_relative "./product.rb"
+require_relative "./marketprice.rb"
 
 class Car < Product
+  include MarketPrice
   attr_reader :make, :model, :year, :price
   attr_writer :price
 
@@ -13,10 +15,6 @@ class Car < Product
 
   def opposite_day_sale
     @price = @price * 1.2
-  end
-
-  def price=(new_price)
-    @price = new_price
   end
 
   def print_info
