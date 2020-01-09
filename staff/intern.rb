@@ -1,3 +1,11 @@
+module Reportable
+  def send_report
+    puts "Sending Email..."
+    # code to send Email
+    puts "Email sent."
+  end
+end
+
 class Employee
   attr_reader :first_name, :last_name, :salary, :active
   attr_writer :first_name, :last_name, :active
@@ -20,17 +28,12 @@ class Employee
 end
 
 class Manager < Employee
+  include Reportable
   attr_reader :employees
 
   def initialize(input_options)
     super(input_options)
     @employees = input_options[:employees]
-  end
-
-  def send_report
-    puts "Sending Email..."
-    # code to send Email
-    puts "Email sent."
   end
 
   def give_all_raises
@@ -47,6 +50,12 @@ class Manager < Employee
 
     employees.each { |employee| employee.active = false }
   end
+
+end
+
+class Intern < Employee
+
+  include Reportable
 
 end
 
@@ -72,15 +81,13 @@ manager = Manager.new(
                       employees: [employee_1, employee_2]
                       )
 
-p employee_1
-p employee_2
-puts "=" * 30
-puts "RAISES"
-manager.give_all_raises
-p employee_1
-p employee_2
-puts "=" * 30
-puts "CUTBACKS"
-manager.fire_all_employees
-p employee_1
-p employee_2
+intern = Intern.new(
+                    first_name: "Jarjar",
+                    last_name: "Binx", 
+                    salary: 35000,
+                    active: true
+                    )
+
+intern.send_report
+manager.send_report
+employee_1.send_report
