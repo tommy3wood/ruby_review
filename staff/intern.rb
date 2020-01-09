@@ -1,9 +1,10 @@
 require_relative "./employee.rb"
 require_relative "./reportable.rb"
 
-class Intern < Employee
+module Actualize
+  class Intern < Employee
 
-  include Reportable
+    include Reportable
 
+  end
 end
-

@@ -1,9 +1,9 @@
-require_relative "./product.rb"
-require_relative "./food.rb"
-require_relative "./car.rb"
-require_relative "./marketprice.rb"
+require_relative "product"
+require_relative "food"
+require_relative "car"
+require_relative "marketprice"
 
-car_1 = Car.new(
+car_1 = StoreFront::Car.new(
                 make: "buick", 
                 model: "riviara", 
                 color: "red", 
@@ -11,7 +11,7 @@ car_1 = Car.new(
                 year: 1991, 
                 stock: true
                 )
-car_2 = Car.new(
+car_2 = StoreFront::Car.new(
                 make: "Tesla", 
                 model: "space truck thing", 
                 color: "blue", 
@@ -19,7 +19,7 @@ car_2 = Car.new(
                 year: 2020, 
                 stock: false
                 )
-car_3 = Car.new(
+car_3 = StoreFront::Car.new(
                 make: "Toyota", 
                 model: "prius", 
                 color: "grey", 
@@ -27,7 +27,7 @@ car_3 = Car.new(
                 year: 2015, 
                 stock: true
                 )
-food_1 = Food.new(
+food_1 = StoreFront::Food.new(
                 protien: "Round chuck", 
                 vegetable: "Green beans", 
                 starch: "Idaho Golds", 

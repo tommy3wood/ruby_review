@@ -1,5 +1,7 @@
-module MarketPrice
-   def price=(new_price)
-    @price = new_price
+module StoreFront
+  module MarketPrice
+     def price=(new_price)
+      @price = new_price
+    end
   end
 end
